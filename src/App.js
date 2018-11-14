@@ -46,7 +46,7 @@ class App extends Component {
       total += parseFloat(cart[i].price) * parseFloat(cart[i].quantity);
     }
     this.setState({
-      totalAmount: total
+      totalAmount: total.toFixed(2)
     });
   }
   handleAddToCart(item) {
@@ -71,6 +71,7 @@ class App extends Component {
     this.sumTotalAmount(this.state.cart);
   }
   handleRemoveProduct(name, e) {
+    console.log("going");
     let cart = this.state.cart;
     let index = cart.findIndex(x => x.name == name);
     cart.splice(index, 1);

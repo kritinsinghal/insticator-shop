@@ -9,6 +9,11 @@ class CartContainer extends Component {
 			cart: this.props.cartItems
 		}
 	}
+	removeAll() {
+		this.props.cartItems.map(item => {
+			this.props.removeProduct.bind(this, item.name);
+		}) 
+	}
 	render() {
 		console.log(this.state.cart);
 		let cartIt;
@@ -34,6 +39,10 @@ class CartContainer extends Component {
 				<hr color="white" width="80%" align="right" />
 				<p className="total">Total Amount: ${this.props.total} </p>
 				<br />
+				<button className="confirm"
+						onClick={this.removeAll()}>
+					Confirm Purchase
+				</button>
 			</div>
 		);
 	}

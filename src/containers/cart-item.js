@@ -5,12 +5,12 @@ class CartItem extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			selectedProduct: [],
+			selectedItem: {},
 			isAdded: false,
-			quantityAdded: 0
+			quantityAdded: 0,
 		};
 	}
-	addToCart(image, name, price, quantity) {
+	addToCart(image, name, price, quantity, left) {
 	    this.setState({
 	        selectedProduct: {
 	          image: image,
@@ -42,23 +42,44 @@ class CartItem extends Component {
 		let image = this.props.imgSrc;
 	    let name = this.props.name;
 	    let price = "$"+this.props.price;
-	    let amount = this.props.amount;
+	    let amount = "$"+this.props.amount.toFixed(2);
 	    let quantity = this.props.quantity;
+	    console.log(this.state.quantityAdded);
 	    let quantityLeft = parseInt(quantity)-parseInt(this.state.quantityAdded);
 		return (
-			<div className="cart-item">
-				<div className="content-wrapper">
-					<img src={image}
-					 	className="item-img"></img>
-				</div>
-				<div className="content-wrapper">
-					<p className="quantity">Qty: {quantity}</p>
-				</div>
-				<br/>
-				<p className="price">@{price}each = {amount}</p>
-				<button className="delete"
+			<table className="cart-item">
+				<tr className="content-wrapper">
+					<td className="image-wrapper">
+						<img src={image}
+					 		className="item-img"></img>
+					 	<button className="toggle">-</button>
+						<button className="toggle"
+								onClick={this.addToCart.bind(
+	              				this,
+	              				image,
+	              				name,
+					            this.props.price,
+					       		this.state.quantityAdded,
+					       		quantityLeft
+	            			)}
+						>+</button>
+					</td>
+					<td>
+						<h1 align="left">{name}</h1>
+						<p className="quantity">Qty: {quantity}</p>
+						<p className="price">@{price}each = {amount}</p>
+					</td>
+				</tr>
+				<tr className="function-wrapper">
+					<td>
+						
+					</td>
+					<td>
+						<button className="delete"
 						onClick={this.props.remove}>Delete</button>
-			</div>
+					</td>
+				</tr>
+			</table>
 		);
 	}
 }
