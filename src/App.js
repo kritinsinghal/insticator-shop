@@ -79,9 +79,11 @@ class App extends Component {
       resetBuilder: 1
       },
       function() {
-        this.setState({
-          resetBuilder: 0
-        });
+        setImmediate(() => {
+          this.setState({
+            resetBuilder: 0
+          });
+        }); 
       }
     );
     this.sumTotalItems(this.state.cart);

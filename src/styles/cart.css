@@ -1,7 +1,13 @@
 .cart-wrapper {
-	background-color: green;
+	background-color: #77c497;
 	margin-bottom: 0px;
 	padding-bottom: 20px;
+}
+
+.emptyState {
+	color: white;
+	font-size: 14px;
+	font-weight: 300;
 }
 
 .cart-wrapper p {

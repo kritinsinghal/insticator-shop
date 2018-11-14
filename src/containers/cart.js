@@ -29,7 +29,8 @@ class CartContainer extends Component {
 		return ( 
 			<div className="cart-wrapper">
 				<p>Shopping Cart</p>
-				{cartIt.length > 0? <div className="cartElement">{cartIt}</div> : "Empty"}
+				{cartIt.length > 0? <div className="cartElement">{cartIt}</div> : 
+									<div className="emptyState">Your Shopping Cart is Empty</div>}
 				<hr color="white" width="80%" align="right" />
 				<p className="total">Total Amount: {this.props.total} </p>
 				<br />

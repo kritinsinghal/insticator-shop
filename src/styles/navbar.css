@@ -4,12 +4,12 @@
 	position: relative;
 	height: 200px;
 	border-bottom: solid 10px;
-	border-color: green;
+	border-color: #77c497;
 }
 
 .header-wrapper h1 {
 	margin: auto;
-	color: green;
+	color: #77c497;
 	font-family: "Verdana";
 	font-size: 45px;
 	margin-top: 50px;
@@ -22,7 +22,7 @@
   	width: 200px;
   	height: 45px;
   	font-weight: 900;
-  	background-color: green;
+  	background-color: #77c497;
 }
 
 .title-wrapper p {
