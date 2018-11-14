@@ -1,5 +1,3 @@
-## Insticator Shop
-
 ![Screenshot](screenshot.png)
 
 -------------------------
