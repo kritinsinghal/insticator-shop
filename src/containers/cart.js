@@ -32,7 +32,7 @@ class CartContainer extends Component {
 				{cartIt.length > 0? <div className="cartElement">{cartIt}</div> : 
 									<div className="emptyState">Your Shopping Cart is Empty</div>}
 				<hr color="white" width="80%" align="right" />
-				<p className="total">Total Amount: {this.props.total} </p>
+				<p className="total">Total Amount: ${this.props.total} </p>
 				<br />
 			</div>
 		);
